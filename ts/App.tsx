@@ -23,6 +23,10 @@ import Colors from "./Colors";
 import Header from './components/Header';
 import InfoBody from './components/InfoBody';
 import InfoPanel from './components/InfoPanel';
+import ActivityGrid from './components/ActivityGrid';
+import Activity from './components/Activity';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Footer from './components/Footer';
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -80,7 +84,13 @@ function App(): React.JSX.Element {
                         side='left'
                     />
                 </InfoBody>
-                <Text>Test</Text>
+                <ActivityGrid>
+                    <Activity title="Slots">Classic slot machines!</Activity>
+                    <Activity title="Blackjack">Obvously! What&#39;s gambling without Blackjack?</Activity>
+                    <Activity title="Horse Races">A tradition as old as society.</Activity>
+                    <Activity title="Poker">A good poker night always leads to a good time!</Activity>
+                </ActivityGrid>
+                <Footer><Icon name="copyright" size={13}/> Evil Gambling & Co. Ltd.</Footer>
             </ScrollView>
         </SafeAreaView>
     );
