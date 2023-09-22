@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        borderRadius: 20,
         width: '100%',
     },
     text: {
