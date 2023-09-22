@@ -21,6 +21,8 @@ import TopBar from "./components/TopBar";
 
 import Colors from "./Colors";
 import Header from './components/Header';
+import InfoBody from './components/InfoBody';
+import InfoPanel from './components/InfoPanel';
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -55,16 +57,30 @@ function App(): React.JSX.Element {
                 barStyle={'light-content'}
                 backgroundColor={Colors.level1}
             />
-            <TopBar test="Wow" />
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic">
-                <Header></Header>
-                <View>
-                    <Section title="Step One">
-                        Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-                        screen and then come back to see your edits.
-                    </Section>
-                </View>
+            <TopBar />
+            <ScrollView style={{ zIndex: 0, elevation: 0 }}>
+                <Header />
+                <InfoBody>
+                    <InfoPanel
+                        title='How it works'
+                        info='It couldn&#39;t be simpler! Just press the button above, pay and await your lucky prize! (Prizes not guaranteed)'
+                        image={require('../res/img/die.jpg')}
+                        side='left'
+                    />
+                    <InfoPanel
+                        title='When life gives you lemons...'
+                        info='...make lemonade! Having an unlucky streak? No worries, it happens to the best of us. That&#39;s why we offer discounts on consecutive rolls!'
+                        image={require('../res/img/lemons.jpg')}
+                        side='right'
+                    />
+                    <InfoPanel
+                        title='Not exciting enough?'
+                        info='No worries! There&#39;s more waiting for you. Check out the activities below. (The following information is need to play: your name, address, date of birth, social security number, nationality, place of residence, next of kin, political affiliation, favorite food, list of pets, diet and health status. You agree to sign a waiver before rolling.)'
+                        image={require('../res/img/sign.jpg')}
+                        side='left'
+                    />
+                </InfoBody>
+                <Text>Test</Text>
             </ScrollView>
         </SafeAreaView>
     );

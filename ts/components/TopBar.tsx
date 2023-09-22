@@ -2,12 +2,9 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import ViewportUnits from '../calculation/ViewportUnits';
 
-type TopBarProps = {
-    test: string;
-}
-
-const TopBar = (props: TopBarProps) => {
+const TopBar = () => {
   return (
   <View style={styles.container}>
     <Text style={styles.title}>B. B. B.</Text>
@@ -18,6 +15,7 @@ const TopBar = (props: TopBarProps) => {
 const styles = StyleSheet.create({
     container: {
         display: "flex",
+        position: 'absolute',
         backgroundColor: Colors.level1,
         //height: 40,
         paddingBottom: 20,
@@ -28,6 +26,9 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         paddingTop: 0,
         flexDirection: 'row',
+        zIndex: 1,
+        elevation: 1,
+        width: ViewportUnits.vw(100),
     },
     title: {
         fontSize: 40,

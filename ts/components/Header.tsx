@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.level0,
         //height: ViewportUnits.vh(50),
         padding: 20,
+        paddingTop: 80,
         justifyContent: "flex-start",
         alignItems: "flex-start",
         flexDirection: 'column',

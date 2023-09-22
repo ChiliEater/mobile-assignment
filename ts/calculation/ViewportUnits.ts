@@ -8,5 +8,6 @@ class ViewportUnits {
     public static vh(multiplier: number) {
         return Dimensions.get('window').height as number / 100.0 * multiplier;
     }
+
 }
 export default ViewportUnits;
