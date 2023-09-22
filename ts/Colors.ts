@@ -6,7 +6,9 @@ class Colors {
     public static readonly level2 = "#004891";
     public static readonly level3 = "#206dcf";
     public static readonly level4 = "#698cb3";
-    public static readonly level5 = "#cca434";
+    public static readonly text0 = "#cca434";
+    public static readonly text1 = "#be790a";
+    public static readonly text2 = "#a45805";
     
 }
 export default Colors;
