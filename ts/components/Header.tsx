@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ViewportUnits from '../calculation/ViewportUnits';
+import RollButton from './RollButton';
 
 const Header = () => {
     return (
@@ -13,13 +14,7 @@ const Header = () => {
                 <Text style={[styles.title, styles.titleBonanza]}>Bonanza.</Text>
             </View>
             <Text style={styles.slogan}>"Win prizes beyond your imagination."</Text>
-            <View style={styles.rollButtonContainer}>
-                <Icon.Button
-                    name="casino"
-                    color={Colors.text0}
-                    style={styles.rollButton}
-                ><Text style={styles.rollButtonText}>Roll now!</Text></Icon.Button>
-            </View>
+            <RollButton></RollButton>
         </View>
     )
 };
