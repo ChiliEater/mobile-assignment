@@ -4,14 +4,15 @@ import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ViewportUnits from '../calculation/ViewportUnits';
 import RollButton from './RollButton';
+import CyclicText from './CyclicText';
 
 const Header = () => {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={[styles.title, styles.titleBig]}>Big.</Text>
-                <Text style={[styles.title, styles.titleBucks]}>Bucks.</Text>
-                <Text style={[styles.title, styles.titleBonanza]}>Bonanza.</Text>
+                <CyclicText colors={Colors.textColors(1)} textStyle={styles.title}>Big.</CyclicText>
+                <CyclicText colors={Colors.textColors(2)} textStyle={styles.title}>Bucks.</CyclicText>
+                <CyclicText colors={Colors.textColors()} textStyle={styles.title} >Bonanza.</CyclicText>
             </View>
             <Text style={styles.slogan}>"Win prizes beyond your imagination."</Text>
             <RollButton></RollButton>
