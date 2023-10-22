@@ -1,30 +1,32 @@
-import React from 'react';
-import { Image, ImageURISource, StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react';
+import { Image, ImageURISource, Pressable, StyleSheet, Text, View } from 'react-native';
 import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ViewportUnits from '../calculation/ViewportUnits';
+import { TutorialContent, TutorialContentList } from '../content/TutorialContent';
+import { NavigationContext } from './Home';
 
 type InfoPanelProps = {
-    title: string,
-    info: string,
-    image: ImageURISource,
+    content: TutorialContent,
     side: 'left' | 'right',
 }
 
 const InfoPanel = (props: InfoPanelProps) => {
-
+    const navigation = useContext(NavigationContext) as any;
     const text =
         <View style={styles.textContainer}>
-            <Text style={styles.title}>{props.title}</Text>
-            <Text style={styles.info}>{props.info}</Text>
+            <Text style={styles.title}>{props.content.shortTitle}</Text>
+            <Text style={styles.info}>{props.content.shortText}</Text>
         </View>;
 
-    const image = <Image style={styles.image} source={props.image} />;
+    const image = <Image style={styles.image} source={props.content.image} />;
     return (
-        <View style={styles.container}>
-            {props.side == 'left' ? text : image}
-            {props.side == 'left' ? image : text}
-        </View>
+        <Pressable onTouchEnd={() => navigation.navigate(TutorialContentList[props.content.id].shortTitle)}>
+            <View style={styles.container}>
+                {props.side == 'left' ? text : image}
+                {props.side == 'left' ? image : text}
+            </View>
+        </Pressable>
     )
 };
 

@@ -9,7 +9,7 @@ type CyclicTextProps = {
     colors: string[],
     style?: ViewStyle,
     textStyle: TextStyle,
-}
+};
 
 
 const CyclicText = (props: CyclicTextProps) => {

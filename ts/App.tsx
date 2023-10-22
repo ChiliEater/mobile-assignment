@@ -23,6 +23,8 @@ import { createNativeStackNavigator, NativeStackNavigationEventMap, NativeStackN
 import Home from './components/Home';
 // Pretty sure this is cursed
 import { NativeStackNavigatorProps } from '@react-navigation/native-stack/lib/typescript/src/types';
+import TutorialDetailsScreen, { TutorialDetails0, TutorialDetails1, TutorialDetails2 } from './components/details/TutorialDetails';
+import { TutorialContentList } from './content/TutorialContent';
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -64,6 +66,23 @@ function App(): React.JSX.Element {
                     component={Home}
                     options={screenStyle("B. B. B.")}
                 />
+                <stack.Screen
+                    name={TutorialContentList[0].shortTitle}
+                    component={TutorialDetails0}
+                    options={screenStyle(TutorialContentList[0].shortTitle)}
+                />
+                <stack.Screen
+                    name={TutorialContentList[1].shortTitle}
+                    component={TutorialDetails1}
+                    options={screenStyle(TutorialContentList[1].shortTitle)}
+                />
+                <stack.Screen
+                    name={TutorialContentList[2].shortTitle}
+                    component={TutorialDetails2}
+                    options={screenStyle(TutorialContentList[2].shortTitle)}
+                />
+                {/* This stuff doesn't work because react nav is being a baby about its children */}
+                {/*tutorialScreens(stack, 1)*/}
             </stack.Navigator>
         </NavigationContainer>
     );
