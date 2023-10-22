@@ -25,6 +25,9 @@ import Home from './components/Home';
 import { NativeStackNavigatorProps } from '@react-navigation/native-stack/lib/typescript/src/types';
 import TutorialDetailsScreen, { TutorialDetails0, TutorialDetails1, TutorialDetails2 } from './components/details/TutorialDetails';
 import { TutorialContentList } from './content/TutorialContent';
+import { GameContentList } from './content/GameContent';
+import { GameDetails0, GameDetails1, GameDetails2, GameDetails3 } from './components/details/GameDetails';
+import { CopyrightDetails } from './components/details/CopyrightDetails';
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -80,6 +83,31 @@ function App(): React.JSX.Element {
                     name={TutorialContentList[2].shortTitle}
                     component={TutorialDetails2}
                     options={screenStyle(TutorialContentList[2].shortTitle)}
+                />
+                <stack.Screen
+                    name={GameContentList[0].title}
+                    component={GameDetails0}
+                    options={screenStyle(GameContentList[0].title)}
+                />
+                <stack.Screen
+                    name={GameContentList[1].title}
+                    component={GameDetails1}
+                    options={screenStyle(GameContentList[1].title)}
+                />
+                <stack.Screen
+                    name={GameContentList[2].title}
+                    component={GameDetails2}
+                    options={screenStyle(GameContentList[2].title)}
+                />
+                <stack.Screen
+                    name={GameContentList[3].title}
+                    component={GameDetails3}
+                    options={screenStyle(GameContentList[3].title)}
+                />
+                <stack.Screen
+                    name="Copyright"
+                    component={CopyrightDetails}
+                    options={screenStyle("Copyright")}
                 />
                 {/* This stuff doesn't work because react nav is being a baby about its children */}
                 {/*tutorialScreens(stack, 1)*/}

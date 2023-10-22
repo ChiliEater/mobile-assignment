@@ -11,6 +11,7 @@ import InfoPanel from './InfoPanel';
 import TopBar from './TopBar';
 import { Die, Lemons, Sign } from '../image/Images';
 import { shortTutorials } from '../content/TutorialContent';
+import { shortGames } from '../content/GameContent';
 
 type HomeProps = {
     navigation: any
@@ -28,10 +29,7 @@ const Home = (props: HomeProps) => {
                         {shortTutorials()}
                     </InfoBody>
                     <ActivityGrid>
-                        <Activity title="Slots">Classic slot machines!</Activity>
-                        <Activity title="Blackjack">Obvously! What&#39;s gambling without Blackjack?</Activity>
-                        <Activity title="Horse Races">A tradition as old as society.</Activity>
-                        <Activity title="Poker">A good poker night always leads to a good time!</Activity>
+                        {shortGames()}
                     </ActivityGrid>
                     <Footer><Icon name="copyright" size={13} /> Evil Gambling & Co. Ltd.</Footer>
                 </ScrollView>

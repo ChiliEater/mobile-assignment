@@ -5,6 +5,7 @@ import { ReactStack } from "../App"
 import TutorialDetails from "../components/details/TutorialDetails"
 import { createContext } from "react"
 import Colors from "../Colors"
+import Activity from "../components/Activity"
 
 export type GamesContent = {
     id: number,
@@ -51,15 +52,9 @@ export const GameContentList: Array<GamesContent> = [
 export const GameDetailsContext = createContext(GameContentList[0]);
 
 export function shortGames() {
-    let left = false;
     return GameContentList.map(element => {
-        left = !left;
         return (
-            <InfoPanel
-                key={element.id}
-                content={element}
-                side={left ? 'left' : 'right'}
-            />);
+            <Activity key={element.id} content={element}/>);
     });
 }
 

@@ -1,17 +1,21 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useContext } from 'react';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ViewportUnits from '../calculation/ViewportUnits';
+import { NavigationContext } from './Home';
 
 type FooterProps = {
     children: React.ReactNode,
 }
 
 const Footer = (props: FooterProps) => {
+    const navigation = useContext(NavigationContext) as any;
   return (
   <View style={styles.container}>
+    <Pressable onTouchEnd={() => navigation.navigate("Copyright")}>
     <Text style={styles.text}>{props.children}</Text>
+    </Pressable>
   </View>
 )};
 

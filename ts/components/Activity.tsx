@@ -1,21 +1,26 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useContext } from 'react';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ViewportUnits from '../calculation/ViewportUnits';
+import { GameContentList, GamesContent } from '../content/GameContent';
+import { NavigationContext } from './Home';
 
 type ActivityProps = {
-    children: React.ReactNode,
-    title: string,
+    content: GamesContent,
 }
 
 const Activity = (props: ActivityProps) => {
-  return (
-  <View style={styles.container}>
-    <Text style={styles.title}>{props.title}</Text>
-    <Text style={styles.description}>{props.children}</Text>
-  </View>
-)};
+    const navigator = useContext(NavigationContext) as any;
+    return (
+        <Pressable onTouchEnd={() => navigator.navigate(props.content.title)}>
+            <View style={styles.container}>
+                <Text style={styles.title}>{props.content.title}</Text>
+                <Text style={styles.description}>{props.content.shortText}</Text>
+            </View>
+        </Pressable>
+    )
+};
 
 const styles = StyleSheet.create({
     container: {
