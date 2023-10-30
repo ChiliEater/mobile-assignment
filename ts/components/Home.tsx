@@ -12,6 +12,8 @@ import TopBar from './TopBar';
 import { Die, Lemons, Sign } from '../image/Images';
 import { shortTutorials } from '../content/TutorialContent';
 import { shortGames } from '../content/GameContent';
+import NewsShelf from './NewsShelf';
+import ButtonShelf from './ButtonShelf';
 
 type HomeProps = {
     navigation: any
@@ -31,6 +33,8 @@ const Home = (props: HomeProps) => {
                     <ActivityGrid>
                         {shortGames()}
                     </ActivityGrid>
+                    <NewsShelf ids={[0, 1]}/>
+                    <ButtonShelf/>
                     <Footer><Icon name="copyright" size={13} /> Evil Gambling & Co. Ltd.</Footer>
                 </ScrollView>
             </View>
