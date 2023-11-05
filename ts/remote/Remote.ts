@@ -8,7 +8,6 @@ class Remote {
         try {
             const res = await fetch(`${this.host}/${this.postPath}/${id}.json`);
             const json = await res.json();
-            console.log(json);
             return new Post(json);
         } catch (err) {
             console.log(err);

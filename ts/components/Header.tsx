@@ -1,15 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import Colors from '../Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ViewportUnits from '../calculation/ViewportUnits';
 import RollButton from './RollButton';
 import CyclicText from './CyclicText';
+import { DefaultAvatar } from '../image/Images';
+import Profile from './Profile';
 
 const Header = () => {
     return (
         <View style={styles.container}>
             <View>
+                <Profile/>
                 <CyclicText colors={Colors.textColors(1)} textStyle={styles.title}>Big.</CyclicText>
                 <CyclicText colors={Colors.textColors(2)} textStyle={styles.title}>Bucks.</CyclicText>
                 <CyclicText colors={Colors.textColors()} textStyle={styles.title} >Bonanza.</CyclicText>
